@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Login</title>
+    <link rel="stylesheet" href="common.css">
+    <script>
+        function validateLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            if (username === "admin" && password === "password") {
+                window.location.href = "home.html";
+            } else {
+                alert("Invalid credentials! Please try again.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Railway Ticket System</h1>
+    </header>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="register.html">Register</a>
+        <a href="login.html">Login</a>
+    </nav>
+    <div class="container">
+        <h2>Login</h2>
+        <form onsubmit="validateLogin(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        
+        <p style="text-align: center; margin-top: 1rem;">
+            Not registered yet? 
+            <a href="register.html" style="color: #00509e; text-decoration: underline;">Create an account here</a>.
+        </p>
+    </div>
+    <footer>
+        &copy; 2024 Railway Ticket System
+    </footer>
+</body>
+</html>
